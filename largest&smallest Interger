@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main(void){
+    int t;
+    cin >> t;
+
+    while(t--){
+        int n;
+        cin >> n;
+        int num_list[n];
+            for(int i = 0; i < n; i++){
+                int value;
+                cin >> value;
+                num_list[i] = value;
+                }
+        int min_value = num_list[0];
+        int max_value = num_list[0];
+            for(int i = 1; i < n; i++){
+                    min_value = min(min_value, num_list[i]);
+                    max_value = max(max_value, num_list[i]);
+                    }
+        cout << max_value << " "<< min_value << "\n";
+    }
+    return 0;
+}
