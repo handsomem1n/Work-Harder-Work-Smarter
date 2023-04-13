@@ -1,0 +1,72 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int t; // 판별하려는 게임 수
+    cin >> t;
+    while (t--)
+    {
+        int n; // 인원 수
+        cin >> n;
+        int cnt_r = 0;
+        int cnt_s = 0;
+        int cnt_p = 0;
+        int win_cnt = 0;
+        int choice;
+        for (int i = 0; i < n; i++)
+        {
+            cin >> choice;
+            switch (choice)
+            {
+            case 1:
+                cnt_s += 1;
+                break;
+            case 2:
+                cnt_r += 1;
+                break;
+            case 3:
+                cnt_p += 1;
+                break;
+            }
+        }
+        if (cnt_r > 0 && cnt_s > 0 && cnt_p > 0)
+        {
+            win_cnt = 0;
+        }
+        else if (cnt_r == 0)
+        {
+            if (cnt_s > 0 && cnt_p > 0)
+            {
+                win_cnt = cnt_s;
+            }
+            else if (cnt_s == 0 || cnt_p == 0)
+            {
+                win_cnt = 0;
+            }
+        }
+        else if (cnt_s == 0)
+        {
+            if (cnt_r > 0 && cnt_p > 0)
+            {
+                win_cnt = cnt_p;
+            }
+            else if (cnt_r == 0 || cnt_p == 0)
+            {
+                win_cnt = 0;
+            }
+        }
+        else if (cnt_p == 0)
+        {
+            if (cnt_r > 0 && cnt_s > 0)
+            {
+                win_cnt = cnt_r;
+            }
+            else if (cnt_r == 0 || cnt_s == 0)
+            {
+                win_cnt = 0;
+            }
+        }
+        cout << win_cnt << endl;
+    }
+}
