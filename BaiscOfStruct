@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
 
+using namespace std;
+
 struct Point {      // 위의 구조체'struct'는 x와 y라는 두 개의 멤버 변수를 가지고 있음
   int x;
   int y;
@@ -10,13 +12,15 @@ struct Point {      // 위의 구조체'struct'는 x와 y라는 두 개의 멤�
 int main() {
   Point p1 = { 3, 4 };
   Point p2 = { 6, 8 };
+                    // 두 개의 Point 객체 p1, p2를 생성한 것임.
   
   int dx = p2.x - p1.x;
   int dy = p2.y - p1.y;
+                    // 두 점 사이의 거리를 계산하기 위해 거리 공식을 사용한 것임.
   
-  double distance = std::sqrt(dx * dx + dy * dy);
+  double distance = sqrt(dx * dx + dy * dy);
   
-  std::cout << "The distance between the two points is: " << distance << std::endl;
+  cout << "The distance between the two points is: " << distance << endl;
   
   return 0;
 }
