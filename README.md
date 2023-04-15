@@ -1,2 +1,2 @@
-# Work-Harder-Work-Smarter
+# Work-Harder-and-Smarter
 He11o
