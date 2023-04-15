@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while(t--){
+        int k;
+        cin >> k;
+
+        int digits = 1; // 자릿수
+        long count = 9; // 자리수의 개수
+        long start = 1; 
+
+        // 몇 자리 수인지 계산
+        while (k > digits * count) {
+            k -= digits * count;
+            digits++;
+            count *= 10;
+            start *= 10;
+        }
+
+        // 몇 번째 수인지 계산
+        start += (k - 1) / digits;
+
+        // k번째 자리의 숫자 계산
+        string s = to_string(start);
+        int index = (k - 1) % digits;
+        cout << s[index] << endl;
+    }
+    return 0;
+}
