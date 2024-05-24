@@ -8,7 +8,6 @@ int main() {
     while (t--) {
         int n;
         long long prod = 1;
-    /*cout << "몇개의 자연수를 입력할 것인가요? : ";*/
         cin >> n;
 
         for(int i=0; i<n; i++) {
